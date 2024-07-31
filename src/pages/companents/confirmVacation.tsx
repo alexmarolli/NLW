@@ -1,15 +1,21 @@
 import { Mail, User, X } from "lucide-react"
+import { useNavigate } from "react-router-dom"
 
 interface confirmInviteProps{
     closeToconfirmVacation : ()=> void
 }
 
 export function ConfirmInvite({
-    closeToconfirmVacation, 
-     }:
-     confirmInviteProps){
+    closeToconfirmVacation, }:
+     confirmInviteProps
+    ){
 
-    
+    const navigate =useNavigate()
+
+    function tripDetail(){
+      navigate('/tripDetail/123')
+    }
+      
     return(
       <div className="fixed inset-0 flex items-center justify-center">
         <div className="w-[640px] bg-zinc-900 rounded-xl shadow-shape py-5 px-6 space-y-5">
@@ -51,7 +57,7 @@ export function ConfirmInvite({
             />
             </div>
 
-            <button type="submit" className=" flex  items-center w-full justify-center bg-lime-300 text-lime-950 rounded-lg px-5 py-2 font-medium gap-2 hover:bg-lime-400">
+            <button type="button" onClick={tripDetail} className=" flex  items-center w-full justify-center bg-lime-300 text-lime-950 rounded-lg px-5 py-2 font-medium gap-2 hover:bg-lime-400">
             Confirmar criação da viagem
             </button>
 
